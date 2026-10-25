@@ -2,7 +2,7 @@
 
 Transport: append-only files. One message = one line in `comms_center/bus.log` AND (if payload large) a file in recipient inbox `comms_center/inbox/<agent>/<id>.md`.
 
-Agents: `MGR` (manager) `ANL` (analyst) `VID` (video_champion) `ENG` (engine_champion). `ALL` = broadcast.
+Agents: `MGR` (manager) `ANL` (analyst) `VID` (video_champion) `ENG` (engine_champion) `AUD` (audio_champion). `ALL` = broadcast.
 
 ## Line format (bus.log)
 `<UTC ISO>|<FROM>><TO>|<TYPE>|<ID>|<STATUS>|<payload ≤200ch>|<ref path optional>`

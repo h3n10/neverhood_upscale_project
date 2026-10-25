@@ -1,5 +1,6 @@
 ﻿from pathlib import Path
 import argparse
+import shutil
 import subprocess
 from PIL import Image, ImageDraw, ImageFont
 
@@ -15,8 +16,16 @@ def main():
     ap = argparse.ArgumentParser(description='Compare FFmpeg classical 3x scalers on extracted PNG frames.')
     ap.add_argument('--input-dir', type=Path, required=True)
     ap.add_argument('--output-dir', type=Path, required=True)
-    ap.add_argument('--ffmpeg', type=Path, required=True)
+    ap.add_argument('--ffmpeg', type=Path, help='ffmpeg executable (default: find ffmpeg on PATH)')
     args = ap.parse_args()
+    ffmpeg = args.ffmpeg
+    if ffmpeg is not None and not ffmpeg.is_file():
+        ap.error(f'ffmpeg executable not found: {ffmpeg}')
+    if ffmpeg is None:
+        found = shutil.which('ffmpeg')
+        if not found:
+            ap.error('ffmpeg not found; add it to PATH or pass --ffmpeg <path>')
+        ffmpeg = Path(found)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     inputs = sorted(args.input_dir.glob('frame_*.png'))
     if not inputs:
@@ -25,7 +34,7 @@ def main():
         tag = src.stem.removeprefix('frame_')
         for name, vf in SCALERS.items():
             out = args.output_dir / f'frame_{tag}_{name}.png'
-            cmd = [str(args.ffmpeg), '-hide_banner', '-loglevel', 'error', '-y', '-i', str(src), '-vf', vf, '-frames:v', '1', str(out)]
+            cmd = [str(ffmpeg), '-hide_banner', '-loglevel', 'error', '-y', '-i', str(src), '-vf', vf, '-frames:v', '1', str(out)]
             subprocess.run(cmd, check=True)
             with Image.open(out) as im:
                 if im.size != (960, 600):

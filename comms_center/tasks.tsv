@@ -21,4 +21,8 @@ T20	ANL	DONE	Script: parametric extraction of all audio+video (work_directory/to
 T21	MGR	DONE	Animation upscale rules + tools/scripts/upscale_run.py (untested against live API)	2026-10-25T06:50Z
 T22	MGR	DONE	User decisions applied: script v2 + tools/scripts/assemble_video.py	2026-10-25T07:20Z
 T23	ENG	DONE	Analyse ScummVM neverhood engine; knowledge/engine_source.md; upscaled-asset feasibility report	2026-10-25T07:06Z
-
+T24	ENG	DONE	Plan ScummVM high-resolution resource renderer update	2026-10-25T07:15Z
+T25	MGR	DONE	Remove vendored FFmpeg; resolve from PATH or --ffmpeg and document requirement	2026-10-25T07:19Z
+T26	MGR	DONE	Create Python venv and requirements; verify FFmpeg use from PATH	2026-10-25T07:32Z
+T27	MGR	DONE	Create Neverhood_audio_champion agent (.github/agents)	2026-10-25T07:40Z
+T28	AUD	NEW	Explore audio quality improvement options; knowledge/audio_upscaling.md	2026-10-25T07:40Z

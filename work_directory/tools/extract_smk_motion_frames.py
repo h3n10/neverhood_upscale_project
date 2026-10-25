@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Extract three spread SMK frames and verify decoded-pixel motion locally."""
-import argparse, hashlib, json, pathlib, subprocess, sys
+import argparse, hashlib, json, pathlib, shutil, subprocess, sys
 from PIL import Image, ImageChops, ImageStat
 
 def main():
@@ -8,8 +8,16 @@ def main():
     ap.add_argument('sample', type=pathlib.Path)
     ap.add_argument('metadata', type=pathlib.Path)
     ap.add_argument('frames_dir', type=pathlib.Path)
-    ap.add_argument('--ffmpeg', required=True, type=pathlib.Path)
+    ap.add_argument('--ffmpeg', type=pathlib.Path, help='ffmpeg executable (default: find ffmpeg on PATH)')
     a = ap.parse_args()
+    ffmpeg = a.ffmpeg
+    if ffmpeg is not None and not ffmpeg.is_file():
+        raise SystemExit(f'ffmpeg executable not found: {ffmpeg}')
+    if ffmpeg is None:
+        found = shutil.which('ffmpeg')
+        if not found:
+            raise SystemExit('ffmpeg not found; add it to PATH or pass --ffmpeg <path>')
+        ffmpeg = pathlib.Path(found)
     meta = json.loads(a.metadata.read_text(encoding='utf-8'))
     count = int(meta['frames'])
     if count < 3:
@@ -22,7 +30,7 @@ def main():
     if list(a.frames_dir.glob('frame_*.png')):
         raise SystemExit('refusing to overwrite existing frame PNGs')
     expr = 'select=' + '+'.join(f'eq(n\\,{i})' for i in indices)
-    cmd = [str(a.ffmpeg), '-hide_banner', '-loglevel', 'error', '-i', str(a.sample),
+    cmd = [str(ffmpeg), '-hide_banner', '-loglevel', 'error', '-i', str(a.sample),
            '-vf', expr, '-fps_mode', 'passthrough', '-start_number', '0', str(pattern)]
     proc = subprocess.run(cmd, capture_output=True, text=True)
     if proc.returncode:

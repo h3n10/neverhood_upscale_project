@@ -1,4 +1,5 @@
 .secrets/
+work_directory/.venv/
 DATA_source/
 DATA_upscaled/
 setup/

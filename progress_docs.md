@@ -1,4 +1,19 @@
-﻿## 2026-10-25 - T23 completed (ENG)
+﻿## 2026-10-25 - T26 completed (MGR)
+- Added pinned `requirements.txt` for NumPy, Pillow, and SciPy; created the project virtual environment under ignored `work_directory/.venv`.
+- Verified FFmpeg resolves from the system `PATH` inside the venv, separate from Python dependencies. Documented Windows setup and FFmpeg behavior in README/tool knowledge.
+- No game archives or assets were changed.
+
+## 2026-10-25 - T25 completed (MGR)
+- Removed the vendored FFmpeg executable and imageio-ffmpeg package from `work_directory/tools`; FFmpeg is now resolved from `PATH`, with an optional `--ffmpeg` override for extraction/assembly tools.
+- SMK frame/audio extraction, video QA, and video assembly require FFmpeg; archive inspection, raw extraction, and built-in audio decoding do not. Requests for optional FFmpeg operations now fail clearly if the executable is unavailable.
+- Updated README and tool knowledge. No source archives or upscaled game files were changed.
+
+## 2026-10-25 - T24 completed (ENG)
+- Wrote `docs/engine_update_plan.md`, a plan-only ScummVM Neverhood renderer/resource update proposal for 640x480 logical coordinates with 1080p/1440p/4K/device/custom output targets, 4:3 fit, resource tiers/fallback, sidecar manifest, palette/alpha, animation and video paths, GUI/config/backend/Android considerations, save compatibility, memory/performance, test plan, milestones and effort estimates.
+- Separated source-verified behavior from proposed or unverified behavior; identified a VP9/WebM-in-MKV runtime candidate as conditional on `USE_VPX` and Neverhood integration. Listed open user/manager decisions and ANL/VID handoff requirements.
+- No ScummVM source, `DATA_source/`, or `DATA_upscaled/` files were changed; no implementation, build, codec runtime test or asset repack was performed.
+
+## 2026-10-25 - T23 completed (ENG)
 - Read-only source review of ScummVM Neverhood at `8ab1cfafb42`. Documented startup, fixed 640x480 CLUT8 screen, resource/hash/NHC behavior, bitmap/animation geometry, scene/entity/input flow, palettes, Smacker and audio paths in `knowledge/engine_source.md`.
 - Assessed replacement and patch options in `knowledge/upscaled_assets_feasibility.md`. Recommendation: keep high-resolution replacements out of runtime data pending a custom logical-coordinate/high-resolution render path; use stock presentation scaling in the interim. Claims are marked verified vs inferred; no build/patch/runtime test was run.
 - Updated `knowledge/engine_tech.md`, the knowledge index, project README and task board. ScummVM source and `DATA_source/` were not modified.
@@ -70,4 +85,3 @@
 
 ## 2026-10-23 - Project init
 - Agents created (manager visible; analyst, video champion hidden), rules, comms_center, folder layout.
-

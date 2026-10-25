@@ -36,14 +36,15 @@ SRC = ROOT / "work_directory/extracted/video"
 OUT = ROOT / "work_directory/upscaled/video_encoded"
 
 
-def find_ffmpeg():
+def find_ffmpeg(explicit=None):
+    if explicit:
+        if not explicit.is_file():
+            sys.exit(f"ffmpeg executable not found: {explicit}")
+        return str(explicit.resolve())
     p = shutil.which("ffmpeg")
     if p:
         return p
-    hits = list((ROOT / "work_directory/tools").rglob("ffmpeg*.exe"))
-    if hits:
-        return str(hits[0])
-    sys.exit("ffmpeg not found")
+    sys.exit("ffmpeg not found; add it to PATH")
 
 
 def codec_args(codec):
@@ -119,6 +120,7 @@ def main():
     ap.add_argument("--blb", nargs="*")
     ap.add_argument("--scene", nargs="*")
     ap.add_argument("--codec", choices=["ffv1", "h264", "hevc"], default="ffv1")
+    ap.add_argument("--ffmpeg", type=Path, help="ffmpeg executable (default: find ffmpeg on PATH)")
     ap.add_argument("--grain", type=float, default=3.0, help="temporal noise strength (0 off)")
     ap.add_argument("--drift", type=float, default=0.6, help="held-frame wander amplitude in output px (0 off)")
     ap.add_argument("--canvas", help="pad to WxH, e.g. 3840x2160")
@@ -131,7 +133,7 @@ def main():
             n = len(list((UP / b / e / "frames").glob("*.png")))
             print(f"{b}/{e}: {n} upscaled frames")
         return
-    ff = find_ffmpeg()
+    ff = find_ffmpeg(a.ffmpeg)
     for b, e in clips:
         assemble(b, e, a, ff)
 

@@ -132,9 +132,9 @@ def fps_of(raw: int):
     return None
 
 
-def ffmpeg_exe() -> str | None:
-    for p in (HERE / "imageio_ffmpeg").rglob("ffmpeg*.exe"):
-        return str(p)
+def ffmpeg_exe(explicit: pathlib.Path | None = None) -> str | None:
+    if explicit:
+        return str(explicit.resolve()) if explicit.is_file() else None
     return shutil.which("ffmpeg")
 
 
@@ -239,7 +239,7 @@ def do_video(fh, e, d: pathlib.Path, meta, args):
         f = fps_of(r)
         meta.update(format=raw[:4].decode(), width=w, height=h, frames=n, frame_rate_raw=r,
                     fps=f, duration_s=(n / f if f else None))
-    ff = ffmpeg_exe()
+    ff = args.ffmpeg_executable
     if args.decode_frames and ff:
         n = meta.get("frames", 0)
         sel = list(range(n)) if args.decode_frames == "all" else sorted(
@@ -341,7 +341,14 @@ def main():
     ap.add_argument("--force", action="store_true", help="overwrite existing (default: skip dirs with metadata.json)")
     ap.add_argument("--decode-frames", metavar="N|all", help="video: decode N evenly spaced frames (or 'all') to PNG via ffmpeg")
     ap.add_argument("--video-audio", action="store_true", help="video: also extract SMK audio track to audio.wav via ffmpeg")
+    ap.add_argument("--ffmpeg", type=pathlib.Path, help="ffmpeg executable (default: find ffmpeg on PATH)")
     args = ap.parse_args()
+    ffmpeg = ffmpeg_exe(args.ffmpeg)
+    if args.ffmpeg and not ffmpeg:
+        ap.error(f"ffmpeg executable not found: {args.ffmpeg}")
+    if (args.decode_frames or args.video_audio) and not ffmpeg:
+        ap.error("video decoding/audio extraction requires ffmpeg on PATH or --ffmpeg <path>")
+    args.ffmpeg_executable = ffmpeg
 
     names = ALL_BLB if "all" in args.blb else [b.lower().removesuffix(".blb") for b in args.blb]
     groups = list(GROUPS) if args.type == "all" else [args.type]

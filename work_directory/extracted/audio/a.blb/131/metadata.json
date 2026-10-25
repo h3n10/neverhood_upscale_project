@@ -1,0 +1,26 @@
+{
+  "archive": "a.blb",
+  "id": 131,
+  "hash": "6420AC00",
+  "type": 8,
+  "group": "audio",
+  "compression": 1,
+  "disk_size": 1769722,
+  "size": 1769722,
+  "type_name": "music",
+  "timestamp": 3997943921,
+  "offset": 11483768,
+  "extdata_first_byte_hex": "FF",
+  "files": [
+    "audio.raw",
+    "audio.wav"
+  ],
+  "shift_value": 255,
+  "sample_rate": 22050,
+  "channels": 1,
+  "bits": 16,
+  "samples": 884861,
+  "duration_s": 40.12975056689342,
+  "kind": "music",
+  "sha256": "07e3d47d43af709c91a4392da1674ef3a7f2d5dc104944ea78c490edfc53ddda"
+}

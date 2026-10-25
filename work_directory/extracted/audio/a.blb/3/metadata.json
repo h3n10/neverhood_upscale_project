@@ -1,0 +1,26 @@
+{
+  "archive": "a.blb",
+  "id": 3,
+  "hash": "B288D450",
+  "type": 7,
+  "group": "audio",
+  "compression": 3,
+  "disk_size": 56505,
+  "size": 110335,
+  "type_name": "sound",
+  "timestamp": 3994630709,
+  "offset": 96716,
+  "extdata_first_byte_hex": "02",
+  "files": [
+    "audio.raw",
+    "audio.wav"
+  ],
+  "shift_value": 2,
+  "sample_rate": 22050,
+  "channels": 1,
+  "bits": 16,
+  "samples": 110335,
+  "duration_s": 5.003854875283447,
+  "kind": "sound",
+  "sha256": "e0245122722e888de4edcaee50af149a78157f1c4a195c06167fab97d13f3a4f"
+}

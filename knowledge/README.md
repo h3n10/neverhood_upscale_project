@@ -1,4 +1,13 @@
-﻿## 2026-10-25 - T23: ScummVM engine and upscaled-asset feasibility (ENG)
+﻿## 2026-10-25 - T26: Python environment and FFmpeg
+- `requirements.txt` pins NumPy, Pillow, and SciPy; keep the local venv at `work_directory/.venv` (ignored by Git). FFmpeg remains an external PATH dependency.
+
+## 2026-10-25 - T25: external FFmpeg dependency
+- `work_directory/tools` no longer vendors FFmpeg; video frame/audio decoding and video assembly use FFmpeg from `PATH`, with an optional `--ffmpeg` executable override.
+
+## 2026-10-25 - T24: ScummVM hi-res renderer/update plan (ENG)
+- `docs/engine_update_plan.md` - plan-only fork scope for selected display targets, logical-coordinate preservation, resource tiers/sidecar manifest/fallback, RGBA/palette/alpha, Smacker/MKV candidate, GUI/config/backend, Android, memory, save compatibility, tests, milestones, risks, cheaper route, and ANL/VID deliverables. Verified source facts are separated from inferences/proposals; no ScummVM changes or runtime test.
+
+## 2026-10-25 - T23: ScummVM engine and upscaled-asset feasibility (ENG)
 - `engine_source.md` - source/function-level trace of fixed screen, resources, surfaces, collision/input, video/audio, NHC overrides; notes verified vs inferred.
 - `upscaled_assets_feasibility.md` - compares presentation scaling, larger BLB frames, NHC overrides and a renderer patch; includes risks, minimum patch plan, recommendation and citations.
 - `engine_tech.md` - concise current compatibility summary.
@@ -63,4 +72,3 @@ Every agent should append dated lessons newest-on-top. Keep the original files i
 ## 2026-10-24 - Resolution tier rules
 - resolution_options.md - binding rules: 2880x2160 / 1920x1440 / 1440x1080 tiers, keep aspect ratio, no black-bar processing.
 - animation_upscaling_rules.md - animation upscale process, anchor-frame method, open questions
-

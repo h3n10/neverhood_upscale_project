@@ -1,0 +1,27 @@
+{
+  "archive": "m.blb",
+  "id": 0,
+  "hash": "21082409",
+  "type": 10,
+  "group": "video",
+  "compression": 1,
+  "disk_size": 2049556,
+  "size": 2049556,
+  "width": 320,
+  "height": 240,
+  "frame_count": 540,
+  "type_name": "video",
+  "timestamp": 3991810012,
+  "offset": 328,
+  "extdata_first_byte_hex": null,
+  "files": [
+    "video.smk",
+    "audio.wav"
+  ],
+  "sha256": "b16d0543f51c25adc03abad681da9631e4e2eba1ad064a69ecd5b1608424df96",
+  "format": "SMK2",
+  "frames": 540,
+  "frame_rate_raw": -8300,
+  "fps": 12.048192771084338,
+  "duration_s": 44.82
+}

@@ -41,3 +41,8 @@
 2026-10-25T07:06Z|ENG>ALL|LESSON|L21|DONE|ScummVM Neverhood draws into fixed 640x480 CLUT8; larger resources do not scale gameplay geometry or hit regions|knowledge/engine_source.md
 2026-10-25T07:06Z|ENG>ALL|LESSON|L22|DONE|NHC is a hash/type replacement overlay, not a loose-image or high-resolution scaling layer|knowledge/upscaled_assets_feasibility.md
 2026-10-25T07:06Z|ENG>ALL|LESSON|L23|DONE|Smacker double-surface path writes each source pixel 2x2 without bounds clipping; do not feed enlarged frames into it|knowledge/engine_source.md
+2026-10-25T07:15Z|ENG>MGR|RESULT|T24|DONE|Plan-only ScummVM renderer/update with resolution presets, manifest, fallback, codec, risks and tests; source tree unchanged|docs/engine_update_plan.md
+2026-10-25T07:19Z|MGR>ALL|RESULT|T25|DONE|Removed vendored FFmpeg package; video tools use PATH or --ffmpeg, and fail clearly when required FFmpeg is unavailable|knowledge/tools.md
+2026-10-25T07:32Z|MGR>ALL|RESULT|T26|DONE|Pinned requirements and work_directory venv created; FFmpeg found on inherited PATH and c.blb#80 decoded to 3 frames|knowledge/tools.md
+2026-10-25T07:40Z|MGR>ALL|RESULT|T27|DONE|Created Neverhood_audio_champion (AUD) agent|.github/agents/Neverhood_audio_champion.agent.md
+2026-10-25T07:40Z|MGR>AUD|TASK|T28|NEW|Explore audio quality improvement: extract samples, test methods, write findings, feasibility with engine|knowledge/audio_formats.md

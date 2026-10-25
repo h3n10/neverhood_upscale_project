@@ -1,0 +1,89 @@
+{
+  "task": "T28",
+  "date": "2026-10-25",
+  "source": "DATA_source/a.blb (read-only)",
+  "sample_ids": {
+    "sfx": [
+      0,
+      2,
+      3,
+      10,
+      11,
+      16,
+      71,
+      182,
+      294,
+      319
+    ],
+    "music": [
+      126,
+      128,
+      131
+    ]
+  },
+  "decoder": "work_directory/tools/extract_all.py; mono s16le WAV at 22050 Hz; ext-data shift FF=raw s16le, otherwise signed delta accumulation then << shift",
+  "experiments": [
+    {
+      "asset_id": 128,
+      "path": "work_directory\\upscaled\\audio\\a.blb\\128\\afftdn_nr6_nfminus45.wav",
+      "method": "afftdn_nr6_nfminus45",
+      "parameters": "afftdn=nr=6:nf=-45",
+      "sha256": "1fc4e2ab21092b001dbc8adaefb2616e704fa34bbcc6e2f1e1fa9f2bee31d461",
+      "sample_rate_hz": 22050,
+      "samples": 4456449,
+      "duration_s": 202.1065306122449,
+      "disposition": "diagnostic only; not approved for replacement"
+    },
+    {
+      "asset_id": 294,
+      "path": "work_directory\\upscaled\\audio\\a.blb\\294\\adeclick_default.wav",
+      "method": "adeclick_default",
+      "parameters": "adeclick",
+      "sha256": "d3cb01cba22f26cf8494e27917f74a018a9e1da0a0a001ec3e5cd1f116ffc83f",
+      "sample_rate_hz": 22050,
+      "samples": 109202,
+      "duration_s": 4.952471655328798,
+      "disposition": "diagnostic only; not approved for replacement"
+    },
+    {
+      "asset_id": 128,
+      "path": "work_directory\\upscaled\\audio\\a.blb\\128\\resampled_44100.wav",
+      "method": "resampled_44100",
+      "parameters": "aresample=44100",
+      "sha256": "b8025666ccb4069b253c9ecfe6efdfab5c6820329684e43e1c31f37c30cd1abb",
+      "sample_rate_hz": 44100,
+      "samples": 8912898,
+      "duration_s": 202.1065306122449,
+      "disposition": "diagnostic only; not approved for replacement"
+    },
+    {
+      "asset_id": 128,
+      "path": "work_directory\\upscaled\\audio\\a.blb\\128\\resampled_48000.wav",
+      "method": "resampled_48000",
+      "parameters": "aresample=48000",
+      "sha256": "8b3340fcac938f0c039d3a31e872f327a91d66c054143f84a109b586d211d857",
+      "sample_rate_hz": 48000,
+      "samples": 9701114,
+      "duration_s": 202.10654166666666,
+      "disposition": "diagnostic only; not approved for replacement"
+    },
+    {
+      "asset_id": 128,
+      "path": "work_directory\\upscaled\\audio\\a.blb\\128\\tpdf_one_code_step_diagnostic.wav",
+      "method": "TPDF diagnostic",
+      "parameters": "seed=2801; one code-step scale=64",
+      "sha256": "63780c22fadedd28ca8cdbe1eb93110ec74b94a0485474c70f66d5ab2cf2e3e9",
+      "sample_rate_hz": 22050,
+      "samples": 4456449,
+      "duration_s": 202.1065306122449,
+      "disposition": "rejected for replacement; adds noise, not recovered detail"
+    }
+  ],
+  "spectrograms": "first 8 seconds, log magnitude, linear frequency bins to Nyquist, normalized -90..0 dBFS",
+  "limitations": [
+    "high-band level is a spectral proxy, not calibrated noise-floor measurement",
+    "loop boundary values are diagnostic; game loop behavior was not audio-loopback tested",
+    "no listening session was recorded",
+    "resampling adds no source bandwidth"
+  ]
+}
