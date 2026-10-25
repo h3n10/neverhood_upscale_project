@@ -1,0 +1,146 @@
+{
+ "nearest": {
+  "laplacian_var": 3373.1,
+  "mean_gradient": 2.87,
+  "hf_energy_above_source_nyquist_pct": 5.371,
+  "lowfreq_corr_160x120": 0.99965,
+  "best_shift_px_160grid": [
+   0,
+   0
+  ],
+  "lowfreq_psnr_aligned_db": 41.97,
+  "mean_rgb_shift_vs_source": [
+   -0.34,
+   -0.41,
+   -0.48
+  ]
+ },
+ "lanczos": {
+  "laplacian_var": 3167.7,
+  "mean_gradient": 2.554,
+  "hf_energy_above_source_nyquist_pct": 3.635,
+  "lowfreq_corr_160x120": 0.99974,
+  "best_shift_px_160grid": [
+   0,
+   0
+  ],
+  "lowfreq_psnr_aligned_db": 42.6,
+  "mean_rgb_shift_vs_source": [
+   -0.45,
+   -0.47,
+   -0.45
+  ]
+ },
+ "hqx": {
+  "laplacian_var": 8.2,
+  "mean_gradient": 1.515,
+  "hf_energy_above_source_nyquist_pct": 1.297,
+  "lowfreq_corr_160x120": 0.99987,
+  "best_shift_px_160grid": [
+   0,
+   0
+  ],
+  "lowfreq_psnr_aligned_db": 48.73,
+  "mean_rgb_shift_vs_source": [
+   -0.07,
+   -0.03,
+   -0.03
+  ]
+ },
+ "xbr": {
+  "laplacian_var": 5.5,
+  "mean_gradient": 1.414,
+  "hf_energy_above_source_nyquist_pct": 0.856,
+  "lowfreq_corr_160x120": 0.99972,
+  "best_shift_px_160grid": [
+   0,
+   0
+  ],
+  "lowfreq_psnr_aligned_db": 45.92,
+  "mean_rgb_shift_vs_source": [
+   -0.1,
+   -0.04,
+   -0.05
+  ]
+ },
+ "epx": {
+  "laplacian_var": 11.2,
+  "mean_gradient": 1.741,
+  "hf_energy_above_source_nyquist_pct": 1.635,
+  "lowfreq_corr_160x120": 0.99979,
+  "best_shift_px_160grid": [
+   0,
+   0
+  ],
+  "lowfreq_psnr_aligned_db": 46.98,
+  "mean_rgb_shift_vs_source": [
+   -0.02,
+   0.02,
+   -0.0
+  ]
+ },
+ "gemini": {
+  "laplacian_var": 38.6,
+  "mean_gradient": 2.14,
+  "hf_energy_above_source_nyquist_pct": 1.402,
+  "lowfreq_corr_160x120": 0.99369,
+  "best_shift_px_160grid": [
+   0,
+   0
+  ],
+  "lowfreq_psnr_aligned_db": 30.62,
+  "mean_rgb_shift_vs_source": [
+   -3.67,
+   -2.94,
+   2.84
+  ]
+ },
+ "gemapi": {
+  "laplacian_var": 57.7,
+  "mean_gradient": 2.507,
+  "hf_energy_above_source_nyquist_pct": 2.149,
+  "lowfreq_corr_160x120": 0.98698,
+  "best_shift_px_160grid": [
+   0,
+   0
+  ],
+  "lowfreq_psnr_aligned_db": 20.22,
+  "mean_rgb_shift_vs_source": [
+   -20.86,
+   -10.6,
+   24.31
+  ]
+ },
+ "gemapi2": {
+  "laplacian_var": 43.0,
+  "mean_gradient": 2.177,
+  "hf_energy_above_source_nyquist_pct": 1.811,
+  "lowfreq_corr_160x120": 0.99116,
+  "best_shift_px_160grid": [
+   0,
+   0
+  ],
+  "lowfreq_psnr_aligned_db": 29.68,
+  "mean_rgb_shift_vs_source": [
+   -0.88,
+   -3.6,
+   2.94
+  ]
+ },
+ "gemapi3": {
+  "laplacian_var": 40.4,
+  "mean_gradient": 2.103,
+  "hf_energy_above_source_nyquist_pct": 1.703,
+  "lowfreq_corr_160x120": 0.99116,
+  "best_shift_px_160grid": [
+   0,
+   0
+  ],
+  "lowfreq_psnr_aligned_db": 29.71,
+  "mean_rgb_shift_vs_source": [
+   -1.06,
+   -3.49,
+   3.31
+  ]
+ }
+}

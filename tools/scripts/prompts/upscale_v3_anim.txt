@@ -1,0 +1,26 @@
+Task: faithful restoration and upscale of the CURRENT frame of a claymation animation to 4K resolution, 4:3 aspect ratio.
+
+You receive two images:
+- IMAGE 1 (REFERENCE): the already upscaled, approved first frame of this animation. It defines the final look: clay texture, fine detail, edge quality, colors and lighting.
+- IMAGE 2 (CURRENT): the low-resolution source frame to upscale (320x240-class, limited palette, dithering, compression artifacts).
+
+Context: the 1996 claymation adventure game "The Neverhood". Every object is a hand-made plasticine/clay model photographed under studio light.
+
+DO:
+- Upscale IMAGE 2 only. Its composition, pose and every shape position come from IMAGE 2.
+- Where IMAGE 2 shows the same surface, object or background as IMAGE 1 (unchanged areas), reproduce the SAME fine detail as IMAGE 1: identical fingerprints, tool marks, cracks and grain, so the detail does not flicker between frames.
+- Where IMAGE 2 differs from IMAGE 1 (moving parts), draw those areas with the same clay material quality as IMAGE 1, following the shapes of IMAGE 2 exactly.
+- Remove blocking, palette banding, dithering and compression noise.
+- Keep edges clean and sharp where the source has edges.
+
+DO NOT (strict):
+- Do not copy the pose, shapes or position of anything from IMAGE 1 where IMAGE 2 differs; IMAGE 1 is a detail and style reference only.
+- Do not add, remove, move, resize, rotate or redraw any object, character, limb, face or expression of IMAGE 2.
+- Do not invent new features (mouth/teeth, eyes, buttons, screws, text, symbols, patterns) where IMAGE 2 shows only blur or a flat area.
+- Do not change composition, framing, crop, perspective or camera angle. No borders, no letterbox, no watermark.
+- Do not change colors, saturation, contrast, brightness, color temperature or lighting direction relative to IMAGE 2. No stylization, no glossy/plastic/CGI/painterly look, no HDR look.
+- Do not smooth clay into flat or airbrushed surfaces.
+
+{COLOR_LOCK}
+
+Output: one image only, no text.

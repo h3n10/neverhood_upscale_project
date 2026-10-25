@@ -1,0 +1,119 @@
+{
+ "nearest": {
+  "G1_layout_ssim_bandlimited_colourmatched": 0.9991,
+  "G2_block_dE_mean": 0.64,
+  "G2_block_dE_p95": 1.33,
+  "rgb_shift": [
+   -0.47,
+   -0.43,
+   -0.47
+  ],
+  "G1_pass": true,
+  "G2_pass": true,
+  "gates_pass": true
+ },
+ "lanczos": {
+  "G1_layout_ssim_bandlimited_colourmatched": 0.9992,
+  "G2_block_dE_mean": 0.62,
+  "G2_block_dE_p95": 1.34,
+  "rgb_shift": [
+   -0.59,
+   -0.5,
+   -0.44
+  ],
+  "G1_pass": true,
+  "G2_pass": true,
+  "gates_pass": true
+ },
+ "hqx": {
+  "G1_layout_ssim_bandlimited_colourmatched": 0.9999,
+  "G2_block_dE_mean": 0.16,
+  "G2_block_dE_p95": 0.68,
+  "rgb_shift": [
+   -0.1,
+   -0.04,
+   -0.03
+  ],
+  "G1_pass": true,
+  "G2_pass": true,
+  "gates_pass": true
+ },
+ "xbr": {
+  "G1_layout_ssim_bandlimited_colourmatched": 0.9997,
+  "G2_block_dE_mean": 0.25,
+  "G2_block_dE_p95": 0.75,
+  "rgb_shift": [
+   -0.12,
+   -0.06,
+   -0.05
+  ],
+  "G1_pass": true,
+  "G2_pass": true,
+  "gates_pass": true
+ },
+ "epx": {
+  "G1_layout_ssim_bandlimited_colourmatched": 0.9998,
+  "G2_block_dE_mean": 0.23,
+  "G2_block_dE_p95": 0.71,
+  "rgb_shift": [
+   -0.06,
+   0.01,
+   -0.0
+  ],
+  "G1_pass": true,
+  "G2_pass": true,
+  "gates_pass": true
+ },
+ "gemini": {
+  "G1_layout_ssim_bandlimited_colourmatched": 0.9875,
+  "G2_block_dE_mean": 4.49,
+  "G2_block_dE_p95": 7.39,
+  "rgb_shift": [
+   -4.44,
+   -2.91,
+   2.57
+  ],
+  "G1_pass": true,
+  "G2_pass": true,
+  "gates_pass": true
+ },
+ "gemapi": {
+  "G1_layout_ssim_bandlimited_colourmatched": 0.9548,
+  "G2_block_dE_mean": 21.16,
+  "G2_block_dE_p95": 39.93,
+  "rgb_shift": [
+   -20.83,
+   -10.3,
+   21.91
+  ],
+  "G1_pass": true,
+  "G2_pass": false,
+  "gates_pass": false
+ },
+ "gemapi2": {
+  "G1_layout_ssim_bandlimited_colourmatched": 0.9811,
+  "G2_block_dE_mean": 4.93,
+  "G2_block_dE_p95": 7.99,
+  "rgb_shift": [
+   -1.83,
+   -3.54,
+   3.14
+  ],
+  "G1_pass": true,
+  "G2_pass": true,
+  "gates_pass": true
+ },
+ "gemapi3": {
+  "G1_layout_ssim_bandlimited_colourmatched": 0.9814,
+  "G2_block_dE_mean": 4.89,
+  "G2_block_dE_p95": 7.99,
+  "rgb_shift": [
+   -1.94,
+   -3.44,
+   3.27
+  ],
+  "G1_pass": true,
+  "G2_pass": true,
+  "gates_pass": true
+ }
+}

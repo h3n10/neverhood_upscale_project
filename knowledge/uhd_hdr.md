@@ -1,0 +1,32 @@
+# UHD and HDR for Neverhood assets
+
+## 2026-10-23 - T7: UHD scaling, HDR transfer choices, and recommendation
+
+### Recommendation: deliver UHD in SDR; HDR is not a default enhancement
+The source is 1996-era 8-bit indexed/limited-color clay art with no known scene-referred luminance/mastering metadata. Its palette RGB values provide colors, not hidden highlight radiance. SDR-to-HDR inverse tone mapping can expand code values and create display brightness/headroom, but cannot recover real specular highlights or wider-gamut source colors. Aggressive expansion risks changing the warm mood, palette relationships, lighting and apparent texture. **HDR10, HLG and Dolby Vision are not justified for the source-faithful master.** Prioritize an aspect-correct UHD-size SDR derivative, preserve source values/palette and SDR appearance. 10-bit encoding is allowed as an SDR precision/container choice but must be tagged SDR, not described as HDR.
+
+If a delivery explicitly requires HDR, make an additional, clearly labeled HDR version from the locked SDR master, keep it perceptually close to SDR (no glow, selective brightening, contrast/white-point redesign, saturation boost or AI highlight invention), compare SDR/HDR side by side on calibrated SDR/HDR displays, and obtain manager approval before altering assets. A conservative global luminance expansion with unchanged hue/saturation and highlight roll-off, no scene-local edits and carefully gamut-limited BT.2020/PQ mapping is the least intrusive *experiment*, not a faithful restoration. Reject it if it changes the mood or colors. There is no source-supported target peak/mastering display metadata; do not invent MaxCLL/MaxFALL or mastering-display values.
+
+### Resolution and presentation
+Preserve aspect ratio; pillarbox 4:3 content on 16:9. For a 640x480 canvas, 1080p 4:3 image area is 1440x1080 (2.25x); 1440p 4:3 is 1920x1440 (3x); 2160p 4:3 is 2880x2160 (4.5x). Integer scale candidates are 3x (1920x1440) and 4x (2560x1920); do not crop or nonuniformly stretch to fill 16:9. Individual 320x240 clips need much larger factors to reach these canvases; chain only tested methods and inspect artifacts. Upscaling pixel dimensions is not adding source detail, and stock engine/BLB dimensions still constrain replacement compatibility (`knowledge/resolution_options.md`).
+
+### Color/HDR technical distinctions
+- **BT.2020**: wide-gamut RGB primaries; not a transfer curve by itself. **PQ / SMPTE ST 2084**: absolute display-referred transfer used in HDR10; **HLG**: alternate scene/system gamma transfer for HDR broadcast/displays. HDR10 usually uses HEVC Main 10 with BT.2020/PQ signaling and static mastering-display/MaxCLL/MaxFALL SEI metadata; metadata must describe actual mastering/content, not be guessed. An MP4/MKV can carry such video, but container choice alone does not make it HDR.
+- **Dolby Vision**: dynamic-metadata, profile/codec/device/mastering workflow with specialized metadata and compatibility requirements; not a simple ffmpeg `transfer` tag or suitable routine target for these SDR palette sources. No Dolby Vision authoring toolchain was checked or installed.
+- **FFmpeg here:** includes `zscale`, `libplacebo`, `tonemap`, and `libx265`. `zscale` does explicit primaries/transfer/matrix/range and bit-depth conversion; `libplacebo` offers inverse tone mapping, gamut mapping and debanding; `tonemap` is principally HDR-to-SDR tone mapping, not a magic SDR-to-HDR restoration tool. Setting output tags is not color conversion. Any SDR-to-HDR needs a deliberate mapping and measured/valid metadata. `libplacebo` GPU path and quality/performance were not benchmarked.
+- For the 8-bit palette, retain exact RGB/index data first. No embedded profile means BT.601 should not be inferred from SD resolution (BT.601 is a YCbCr matrix, not a palette-RGB transfer). Preserve source palette; use a documented SDR interpretation such as sRGB/BT.709 only as explicit workflow assumption, and never silently expand palette to wider gamut or boost chroma. Color tags must match actual pixels.
+
+### HDR/SDR working encode policy
+Use a lossless PNG/FFV1 master with exact source timing/palette-reference metadata. For ordinary UHD distribution, encode SDR with correct SDR color tags and a chosen pixel format; preserve aspect/duration. If 10-bit HEVC Main 10 is requested for reduced quantization, encode the SDR signal with SDR transfer/primaries tags (not PQ/BT.2020 labels). For an approved HDR trial, convert to 10-bit, correctly transform SDR levels to BT.2020/PQ or HLG using reviewed filters, choose only documented target-display parameters, and verify tags/SEI with ffprobe or equivalent plus SDR/HDR visual tests. x265 can signal HDR10 metadata (`master-display`, `max-cll` etc.), but values must be measured/known, and metadata does not perform conversion. Keep HDR only as separate derivative; do not write HDR-coded video into game BLBs. No HDR output was created in T7.
+
+### Local hardware / tools / installability
+- PowerShell reports **Intel(R) UHD Graphics 620**, 1 GB reported adapter memory, driver 31.0.101.2140, 2560x1440 desktop. `nvidia-smi`/NVIDIA GPU absent. Vulkan driver availability was not established; do not assume NCNN Vulkan acceleration.
+- FFmpeg at `C:\Users\User\tools\ffmpeg\bin\ffmpeg.exe` is a 2026-10-22 full build with `zscale`, `libplacebo`, `libx265`, `libvmaf`, PNG/FFV1 support and software scalers. Hardware encoding/4K real-time speed is not benchmarked. Pillow is available; PyTorch, NumPy, OpenCV and scikit-image absent.
+- No heavy upscaling or HDR software/model was installed. Research-time Windows package examples: waifu2x-ncnn-vulkan ~34 MB, Video2X ~188-217 MB, Upscayl ~249 MB, chaiNNer ~150 MB, RIFE NCNN ~412 MB; model/dependency/storage needs are additional and vary by release. See `knowledge/upscaling.md` for suitability and caveats.
+
+### Sources
+- ITU-R BT.2100 (HDR television, PQ and HLG): https://www.itu.int/rec/R-REC-BT.2100/en ; BT.2020 primaries: https://www.itu.int/rec/R-REC-BT.2020/en
+- SMPTE ST 2084 (PQ): https://pub.smpte.org/pub/st2084/st2084-2014.pdf
+- FFmpeg filters (`zscale`, `libplacebo`, `tonemap`): https://ffmpeg.org/ffmpeg-filters.html ; FFmpeg x265 encoder docs: https://ffmpeg.org/ffmpeg-codecs.html ; x265 CLI/HDR parameters: https://x265.readthedocs.io/en/master/cli.html
+- Dolby Vision overview: https://www.dolby.com/us/en/technologies/dolby-vision.html
+- Local project resolution evidence: `knowledge/resolution_options.md`; format/rate source: `knowledge/video_formats.md`.

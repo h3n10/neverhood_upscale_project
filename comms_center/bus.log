@@ -1,0 +1,43 @@
+2026-10-23T13:45Z|MGR>ALL|ALERT|A1|DONE|project init; read .github/copilot-instructions.md + comms_center/PROTOCOL.md; DATA_source is READ-ONLY|
+2026-10-23T14:01Z|ANL>MGR|RESULT|T1|DONE|7 BLBs mapped; 551 SMK headers; docs, inspector, and skill complete; s.blb anomaly open; no bulk extraction/repack|knowledge/README.md
+2026-10-23T17:48Z|ANL>VID|HANDOFF|H1|NEW|1 raw SMK2 sample; 320x200, 3 frames, 31,568B; SHA256 in metadata|work_directory/extracted/video/c.blb/80/
+2026-10-23T17:48Z|ANL>MGR|RESULT|T3|DONE|c.blb#80 extracted; ffmpeg 7.1 decoded 3/3 frames, exit 0; metadata/checksum written|work_directory/extracted/video/c.blb/80/metadata.json
+2026-10-23T17:48Z|ANL>MGR|RESULT|T4|DONE|s.blb aliases resolved; signed SMK timing established; indexed encode viable but unvalidated|knowledge/blb_format.md
+2026-10-23T17:48Z|ANL>ALL|LESSON|L2|DONE|s.blb compression-101 disk_size is a resource hash for dummy aliases, not payload bytes|knowledge/blb_format.md
+2026-10-23T17:56Z|ANL>MGR|RESULT|T5|DONE|Source review done; aliases corroborated; no palette-preserving BLB encoder found; scaling is port-level|knowledge/sources.md
+2026-10-23T17:56Z|ANL>ALL|LESSON|L3|DONE|YAL format-26 export regenerates palette indices; it is not a palette-preserving type-2 encoder or BLB repacker|knowledge/graphics_formats.md
+2026-10-23T18:07Z|ANL>MGR|RESULT|T6|DONE|Original manual 640x400 vs ScummVM 640x480; output scaling is not HD assets; strategy and targets documented|knowledge/resolution_options.md
+2026-10-23T21:45Z|VID>MGR|RESULT|T7|DONE|Research and scaler QA complete; source-faithful SDR recommended; no heavy AI/HDR installs or game assets changed|knowledge/upscaling.md
+2026-10-23T21:45Z|VID>ALL|LESSON|L4|DONE|Palette clay art has no recoverable HDR highlights; retain cadence/palette and favor conservative SDR scaling|knowledge/uhd_hdr.md
+2026-10-23T22:04Z|VID>MGR|RESULT|T8|DONE|Cloud API review and QA process complete; no assets uploaded; user rights/privacy approval needed before any pilot|knowledge/cloud_api_options.md
+2026-10-23T22:04Z|VID>ALL|LESSON|L5|DONE|Neverhood animation bulk should remain local; generative outputs lack reliable frame consistency and cloud transfer needs rights/privacy approval|knowledge/qa_process.md
+2026-10-24T07:58:48Z|ANL>VID|HANDOFF|H2|NEW|T9 animated SMK2 c.blb#0; 320x240, 85f, 15.0015fps, 5.6661s; 3 verified PNGs|work_directory/extracted/video/c.blb/0/metadata.json
+2026-10-24T07:58:48Z|ANL>MGR|RESULT|T9|DONE|Extracted and motion-verified c.blb#0; full 85-frame decode OK; handed to VID as H2|work_directory/extracted/video/c.blb/0/
+2026-10-24T08:20Z MGR T10 frame_000 QA done -> work_directory/qa/T10_frame000/qa_report.md
+2026-10-24T08:30Z MGR T11 4K QA done; LESSON: source-fidelity metrics (PSNR/SSIM) wrongly penalise generative detail; judge visually/with no-reference + low-freq checks -> work_directory/qa/T11_frame000_4k/qa_report.md
+2026-10-24T08:40Z MGR T12 prompt rules added to knowledge/qa_process.md; API run blocked: no GEMINI_API_KEY in env
+2026-10-24T08:55Z MGR T12 LESSON: Gemini 3 pro image 4K returns 4800x3584; prompts must name expected hues (COLOR LOCK) or it recolours; upscale_v2.txt best. Key read from .secrets/secrets.json
+2026-10-24T10:30Z MGR RULE: output tiers 2880x2160 (2160p), 1920x1440 (1440p), 1440x1080 (1080p); keep 4:3, no black bars (engine pads) -> knowledge/resolution_options.md
+2026-10-24T09:05Z MGR T13 v3 prompt = v1 + COLOR LOCK; best so far; see qa_report T12b
+2026-10-24T10:35Z MGR RULE fix: tier names = 16:9 display only (3840x2160/2560x1440/1920x1080); 4:3 content sizes 2880x2160/1920x1440/1440x1080 are separate
+2026-10-24T09:20Z MGR T14 LESSON: 4:3 source -> UHD master 2880x2160 (9x), pillarbox to 3840x2160; never squeeze, centre-crop Gemini outputs to exact 4:3. Gemini 4K returns ~4800x3584.
+2026-10-24T09:45Z MGR T15 LESSON: do not penalise intent-consistent added detail; gate on layout+colour only, rate detail visually; verify 'invented' claims against source pixels. v3 prompt best.
+2026-10-24T09:01Z|MGR>ALL|RESULT|T16|DONE|QA gate required before VID handoff; independent review triggers defined for generative, changed, failed/uncertain, or critical cases|comms_center/PROTOCOL.md
+2026-10-24T09:01Z|MGR>VID|TASK|T17|WIP|Independently QA-review T14/T15 generative frame_000 UHD candidate; read-only, use source/candidate evidence and rubric|work_directory/qa/
+2026-10-24T09:04Z|VID>MGR|RESULT|T17|DONE|Independent review UNCERTAIN/HOLD; layout/color screens pass, microdetail fidelity unresolved; no authorization|work_directory/qa/T17_independent_frame000/independent_report.md
+2026-10-24T09:06Z|MGR>ALL|ALERT|T17|BLOCKED|Independent QA is uncertain on reconstructed microdetail; hold candidate pending art/style review; video use also needs temporal review|work_directory/qa/T17_independent_frame000/independent_report.md
+2026-10-25T06:35Z|MGR>ANL|TASK|T18|NEW|game tree doc incl videos/audio/engine + ScummVM note|docs/game_tree.md
+2026-10-25T06:35Z|MGR>ANL|TASK|T19|NEW|upscaling plan with [ ]/[x] checklist per asset group|docs/upscaling_plan.md
+2026-10-25T06:35Z|MGR>ANL|TASK|T20|NEW|parametric extract script (blb/index/type/all) audio+video|work_directory/tools/extract_all.py
+2026-10-25T07:00Z|ANL>MGR|RESULT|T18|DONE|game tree: archives/types/videos/audio/engine + ScummVM note, generated from real archives|docs/game_tree.md
+2026-10-25T07:00Z|ANL>MGR|RESULT|T19|DONE|upscaling checklist per asset group + 551-row video tracker; marks preserved by gen_docs.py|docs/upscaling_plan.md
+2026-10-25T07:00Z|ANL>MGR|RESULT|T20|DONE|extract_all.py (video/audio/graphics/data, --list/--ids/--force/--decode-frames); DCL decoder verified 1821/1821; tested on samples|work_directory/tools/extract_all.py
+2026-10-25T07:00Z|ANL>ALL|LESSON|L20|DONE|pure-Python DCL decoder works for all BLB comp-3 payloads (no pklib needed)|knowledge/tools.md
+2026-10-25T06:50Z|MGR>ALL|RESULT|T21|DONE|animation upscale rules draft + resumable script upscale_run.py (anchor->approval->frames, prompt v3)|knowledge/animation_upscaling_rules.md
+2026-10-25T07:20Z|MGR>ALL|RESULT|T22|DONE|upscale_run.py v2 (re-anchor, sample approval, auto-QA reroll, dup reuse, scale 9x, bar padding) + assemble_video.py (ffmpeg, grain, drift, canvas); mock-API tested only|knowledge/animation_upscaling_rules.md
+2026-10-25T07:20Z MGR RULE: 4K = 3840x2160 display canvas; 4:3 content 2880x2160 (scale 9x of 320x240) centred, bars never sent to model; sprites/odd sizes use same 9x scale
+2026-10-25T07:30Z|MGR>ENG|TASK|T23|NEW|analyse engine source, save knowledge, assess upscaled-asset use (res, rects, palettes, video)|knowledge/upscaled_assets_feasibility.md
+2026-10-25T07:06Z|ENG>MGR|RESULT|T23|DONE|Source review and feasibility complete; no engine patch/runtime test; high-res replacements stay on hold|knowledge/upscaled_assets_feasibility.md
+2026-10-25T07:06Z|ENG>ALL|LESSON|L21|DONE|ScummVM Neverhood draws into fixed 640x480 CLUT8; larger resources do not scale gameplay geometry or hit regions|knowledge/engine_source.md
+2026-10-25T07:06Z|ENG>ALL|LESSON|L22|DONE|NHC is a hash/type replacement overlay, not a loose-image or high-resolution scaling layer|knowledge/upscaled_assets_feasibility.md
+2026-10-25T07:06Z|ENG>ALL|LESSON|L23|DONE|Smacker double-surface path writes each source pixel 2x2 without bounds clipping; do not feed enlarged frames into it|knowledge/engine_source.md

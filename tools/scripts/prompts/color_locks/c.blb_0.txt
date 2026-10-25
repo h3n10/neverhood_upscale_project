@@ -1,0 +1,1 @@
+COLOR LOCK: the clay walls are GREEN/teal-green, the large foreground shapes are ORANGE-RED, the robot is cream/beige, the top-left stripes are yellow/orange. Keep every hue exactly as in the source; a blue or cyan cast is a failure. Keep the same warm studio lighting and the same dark shadow regions.

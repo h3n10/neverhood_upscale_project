@@ -1,0 +1,24 @@
+﻿id	owner	status	title	updated
+T1	ANL	DONE	Analyze game files; document formats; build omnibus skill	2026-10-23T14:01Z
+T3	ANL	DONE	Extract and decode one short SMK sample	2026-10-23T17:48Z
+T4	ANL	DONE	Resolve s.blb aliases, SMK rate units, and indexed image encode feasibility	2026-10-23T17:48Z
+T5	ANL	DONE	Research upstream format, image-tool, and scaling sources; update knowledge	2026-10-23T17:56Z
+T6	ANL	DONE	Research HD resolution paths and recommend asset strategy	2026-10-23T18:07Z
+T7	VID	DONE	Research video conversion, upscaling, frame rates, UHD and HDR; evaluate local pipeline	2026-10-23T21:45Z
+T8	VID	DONE	Evaluate cloud generative image APIs, rights/privacy, volume costs, and strict QA gates	2026-10-23T22:04Z
+T10	VID	DONE	Upscale frame_000 (classical, pixel-art, Gemini web) and QA; report in work_directory/qa/T10_frame000/qa_report.md	2026-10-24T08:20Z
+T11	VID	DONE	4K UHD frame_000 comparison incl. Gemini; supersedes T10 ranking	2026-10-24T08:30Z
+T12	VID	BLOCKED	Gemini API 4K frame_000 run: prompt rules + script ready (tools/scripts/prompts/upscale_v1.txt); needs GEMINI_API_KEY	2026-10-24T08:40Z
+T12	VID	DONE	Gemini API 4K frame_000: v1 colour-shifted (rejected), v2 colour-locked OK; see T11 report	2026-10-24T08:55Z
+T13	VID	DONE	Prompt v3 (v1 + color lock only) frame_000 API 4K: hue fixed, v1 character kept	2026-10-24T09:05Z
+T14	VID	DONE	Redo frame_000 at correct UHD res (2880x2160, 3840x2160 pillarbox; exact 4:3 crop of Gemini outputs)	2026-10-24T09:20Z
+T15	VID	DONE	Intent-aware QA: gates (layout/colour) + visual detail rubric, added detail not penalised; report qa_report_v2_intent_aware.md	2026-10-24T09:45Z
+T16	MGR	DONE	Operationalize QA gate and independent-review trigger in protocol	2026-10-24T09:01Z
+T17	VID	DONE	Independent QA review complete; generative frame_000 candidate remains on hold	2026-10-24T09:06Z
+T18	ANL	DONE	Doc: game file/video/audio/engine tree + ScummVM note (docs/game_tree.md)	2026-10-25T07:00Z
+T19	ANL	DONE	Doc: upscaling plan checklist (docs/upscaling_plan.md)	2026-10-25T07:00Z
+T20	ANL	DONE	Script: parametric extraction of all audio+video (work_directory/tools/extract_all.py)	2026-10-25T07:00Z
+T21	MGR	DONE	Animation upscale rules + tools/scripts/upscale_run.py (untested against live API)	2026-10-25T06:50Z
+T22	MGR	DONE	User decisions applied: script v2 + tools/scripts/assemble_video.py	2026-10-25T07:20Z
+T23	ENG	DONE	Analyse ScummVM neverhood engine; knowledge/engine_source.md; upscaled-asset feasibility report	2026-10-25T07:06Z
+

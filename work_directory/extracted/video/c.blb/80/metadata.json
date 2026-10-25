@@ -1,0 +1,20 @@
+{
+  "archive": "c.blb",
+  "entry_id": 80,
+  "hash": "08288103",
+  "type": 10,
+  "compression": 1,
+  "offset": 240208144,
+  "size": 31568,
+  "expanded_size": 31568,
+  "dimensions": {
+    "width": 320,
+    "height": 200
+  },
+  "frames": 3,
+  "frame_rate_raw_signed": -8300,
+  "fps": 12.048192771084338,
+  "fps_rational": "1000/83",
+  "format": "SMK2",
+  "sha256": "9a329d76824941c57fb6a0d5085c0f8dabee571463355dc6f13bd064e80cb676"
+}

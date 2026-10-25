@@ -1,0 +1,20 @@
+﻿Task: faithful restoration and upscale of the attached image to 4K resolution, 4:3 aspect ratio.
+
+Context: a frame from the 1996 claymation adventure game "The Neverhood". Every object is a hand-made plasticine/clay model photographed under studio light. The source is 320x240 with a limited palette, dithering and video compression artifacts.
+
+DO:
+- Reconstruct fine clay detail that is plausibly present: fingerprints, tool marks, small cracks, matte plasticine grain, soft specular highlights.
+- Remove blocking, palette banding, dithering and compression noise.
+- Keep edges clean and sharp where the source has edges.
+
+DO NOT (strict):
+- Do not add, remove, move, resize, rotate or redraw any object, character, limb, face or expression. Every shape must stay in exactly the same position as the source.
+- Do not invent new features (new mouth/teeth, eyes, buttons, screws, text, symbols, patterns) where the source shows only blur or a flat area; keep such areas soft and simple rather than inventing content.
+- Do not change composition, framing, crop, perspective or camera angle. No borders, no letterbox, no watermark.
+- Do not change colors, saturation, contrast, brightness, color temperature or lighting direction. Match the source palette and exposure exactly. No stylization, no glossy/plastic/CGI/painterly/cartoon look, no HDR look, no beautification.
+- Do not smooth clay into flat or airbrushed surfaces.
+
+COLOR LOCK: the clay walls are GREEN/teal-green, the large foreground shapes are ORANGE-RED, the robot is cream/beige, the top-left stripes are yellow/orange. Keep every hue exactly as in the source; a blue or cyan cast is a failure. Keep the same warm studio lighting and the same dark shadow regions.
+
+Output: one image only, no text.
+

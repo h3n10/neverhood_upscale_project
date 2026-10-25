@@ -1,0 +1,35 @@
+{
+  "original": "work_directory\\extracted\\video\\c.blb\\80\\frames\\frame_01.png",
+  "candidate": "work_directory\\qa\\T7_c_blb80\\frame_01_epx.png",
+  "original_size": [
+    320,
+    200
+  ],
+  "candidate_size": [
+    960,
+    600
+  ],
+  "scale_x": 3.0,
+  "scale_y": 3.0,
+  "downscale_back": {
+    "psnr_db": 42.247,
+    "global_ssim": 0.994829
+  },
+  "lab_vs_source": {
+    "mean_delta_e76_approx": 1.374,
+    "p95_delta_e76_approx": 3.69,
+    "mean_32bin_channel_TV": 0.035604
+  },
+  "luminance_0_255": {
+    "source_mean": 187.764,
+    "candidate_back_mean": 187.875,
+    "source_std": 15.383,
+    "candidate_back_std": 14.927
+  },
+  "edge_overlap_threshold_48": {
+    "precision": 0.96398,
+    "recall": 0.53115,
+    "f1": 0.68491
+  },
+  "note": "Screening metrics only. Candidate was Lanczos-downscaled to source dimensions; Lab is an approximate Pillow conversion; global SSIM is not a local SSIM map."
+}

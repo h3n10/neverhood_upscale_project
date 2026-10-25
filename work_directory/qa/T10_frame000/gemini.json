@@ -1,0 +1,35 @@
+{
+  "original": "work_directory\\extracted\\video\\c.blb\\0\\frames\\frame_000.png",
+  "candidate": "work_directory\\qa\\T10_frame000\\frame_000_gemini.png",
+  "original_size": [
+    320,
+    240
+  ],
+  "candidate_size": [
+    2390,
+    1792
+  ],
+  "scale_x": 7.46875,
+  "scale_y": 7.466666666666667,
+  "downscale_back": {
+    "psnr_db": 29.776,
+    "global_ssim": 0.988146
+  },
+  "lab_vs_source": {
+    "mean_delta_e76_approx": 6.101,
+    "p95_delta_e76_approx": 12.39,
+    "mean_32bin_channel_TV": 0.132031
+  },
+  "luminance_0_255": {
+    "source_mean": 112.678,
+    "candidate_back_mean": 109.964,
+    "source_std": 51.677,
+    "candidate_back_std": 50.204
+  },
+  "edge_overlap_threshold_48": {
+    "precision": 0.74107,
+    "recall": 0.59649,
+    "f1": 0.66097
+  },
+  "note": "Screening metrics only. Candidate was Lanczos-downscaled to source dimensions; Lab is an approximate Pillow conversion; global SSIM is not a local SSIM map."
+}

@@ -1,0 +1,50 @@
+{
+ "gemapi": {
+  "laplacian_var": 33.3,
+  "mean_gradient": 2.127,
+  "hf_energy_above_source_nyquist_pct": 2.161,
+  "lowfreq_corr_160x120": 0.99162,
+  "best_shift_px_160grid": [
+   0,
+   0
+  ],
+  "lowfreq_psnr_aligned_db": 20.46,
+  "mean_rgb_shift_vs_source": [
+   -20.54,
+   -10.53,
+   24.24
+  ]
+ },
+ "gemapi3": {
+  "laplacian_var": 24.4,
+  "mean_gradient": 1.75,
+  "hf_energy_above_source_nyquist_pct": 1.71,
+  "lowfreq_corr_160x120": 0.99593,
+  "best_shift_px_160grid": [
+   0,
+   0
+  ],
+  "lowfreq_psnr_aligned_db": 31.93,
+  "mean_rgb_shift_vs_source": [
+   -0.78,
+   -3.42,
+   3.32
+  ]
+ },
+ "gemapi2": {
+  "laplacian_var": 26.0,
+  "mean_gradient": 1.823,
+  "hf_energy_above_source_nyquist_pct": 1.819,
+  "lowfreq_corr_160x120": 0.99579,
+  "best_shift_px_160grid": [
+   0,
+   0
+  ],
+  "lowfreq_psnr_aligned_db": 31.82,
+  "mean_rgb_shift_vs_source": [
+   -0.6,
+   -3.53,
+   2.96
+  ]
+ }
+}

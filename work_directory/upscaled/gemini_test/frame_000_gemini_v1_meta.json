@@ -1,0 +1,36 @@
+{
+  "model": "gemini-3-pro-image-preview",
+  "image_config": {
+    "imageSize": "4K",
+    "aspectRatio": "4:3"
+  },
+  "prompt": "Task: faithful restoration and upscale of the attached image to 4K resolution, 4:3 aspect ratio.\n\nContext: a frame from the 1996 claymation adventure game \"The Neverhood\". Every object is a hand-made plasticine/clay model photographed under studio light. The source is 320x240 with a limited palette, dithering and video compression artifacts.\n\nDO:\n- Reconstruct fine clay detail that is plausibly present: fingerprints, tool marks, small cracks, matte plasticine grain, soft specular highlights.\n- Remove blocking, palette banding, dithering and compression noise.\n- Keep edges clean and sharp where the source has edges.\n\nDO NOT (strict):\n- Do not add, remove, move, resize, rotate or redraw any object, character, limb, face or expression. Every shape must stay in exactly the same position as the source.\n- Do not invent new features (new mouth/teeth, eyes, buttons, screws, text, symbols, patterns) where the source shows only blur or a flat area; keep such areas soft and simple rather than inventing content.\n- Do not change composition, framing, crop, perspective or camera angle. No borders, no letterbox, no watermark.\n- Do not change colors, saturation, contrast, brightness, color temperature or lighting direction. Match the source palette and exposure exactly. No stylization, no glossy/plastic/CGI/painterly/cartoon look, no HDR look, no beautification.\n- Do not smooth clay into flat or airbrushed surfaces.\n\nOutput: one image only, no text.\n",
+  "input": "C:\\Users\\User\\git\\neverhood_upscale_project\\work_directory\\extracted\\video\\c.blb\\0\\frames\\frame_000.png",
+  "seconds": 32.8,
+  "usage": {
+    "promptTokenCount": 598,
+    "candidatesTokenCount": 2144,
+    "totalTokenCount": 3003,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 340
+      },
+      {
+        "modality": "IMAGE",
+        "tokenCount": 258
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 2000
+      }
+    ],
+    "thoughtsTokenCount": 261,
+    "serviceTier": "standard"
+  },
+  "outputs": [
+    "work_directory\\upscaled\\gemini_test\\frame_000_gemini_0.png"
+  ]
+}

@@ -1,0 +1,114 @@
+{
+ "nearest": {
+  "laplacian_var": 3361.9,
+  "mean_gradient": 2.617,
+  "hf_energy_above_source_nyquist_pct": 5.563,
+  "lowfreq_corr_160x120": 0.99965,
+  "best_shift_px_160grid": [
+   0,
+   0
+  ],
+  "lowfreq_psnr_aligned_db": 41.97,
+  "mean_rgb_shift_vs_source": [
+   -0.33,
+   -0.41,
+   -0.48
+  ]
+ },
+ "bicubic": {
+  "laplacian_var": 3219.8,
+  "mean_gradient": 2.259,
+  "hf_energy_above_source_nyquist_pct": 3.776,
+  "lowfreq_corr_160x120": 0.99972,
+  "best_shift_px_160grid": [
+   0,
+   0
+  ],
+  "lowfreq_psnr_aligned_db": 42.34,
+  "mean_rgb_shift_vs_source": [
+   -0.44,
+   -0.46,
+   -0.46
+  ]
+ },
+ "lanczos": {
+  "laplacian_var": 3202.3,
+  "mean_gradient": 2.289,
+  "hf_energy_above_source_nyquist_pct": 3.762,
+  "lowfreq_corr_160x120": 0.99973,
+  "best_shift_px_160grid": [
+   0,
+   0
+  ],
+  "lowfreq_psnr_aligned_db": 42.44,
+  "mean_rgb_shift_vs_source": [
+   -0.45,
+   -0.47,
+   -0.45
+  ]
+ },
+ "epx": {
+  "laplacian_var": 4.5,
+  "mean_gradient": 1.394,
+  "hf_energy_above_source_nyquist_pct": 1.636,
+  "lowfreq_corr_160x120": 0.99979,
+  "best_shift_px_160grid": [
+   0,
+   0
+  ],
+  "lowfreq_psnr_aligned_db": 47.01,
+  "mean_rgb_shift_vs_source": [
+   -0.03,
+   0.02,
+   -0.0
+  ]
+ },
+ "hqx": {
+  "laplacian_var": 3.4,
+  "mean_gradient": 1.186,
+  "hf_energy_above_source_nyquist_pct": 1.299,
+  "lowfreq_corr_160x120": 0.99987,
+  "best_shift_px_160grid": [
+   0,
+   0
+  ],
+  "lowfreq_psnr_aligned_db": 48.74,
+  "mean_rgb_shift_vs_source": [
+   -0.07,
+   -0.03,
+   -0.04
+  ]
+ },
+ "xbr": {
+  "laplacian_var": 4.1,
+  "mean_gradient": 1.095,
+  "hf_energy_above_source_nyquist_pct": 0.946,
+  "lowfreq_corr_160x120": 0.99972,
+  "best_shift_px_160grid": [
+   0,
+   0
+  ],
+  "lowfreq_psnr_aligned_db": 45.97,
+  "mean_rgb_shift_vs_source": [
+   -0.08,
+   -0.03,
+   -0.04
+  ]
+ },
+ "gemini": {
+  "laplacian_var": 16.8,
+  "mean_gradient": 1.841,
+  "hf_energy_above_source_nyquist_pct": 1.403,
+  "lowfreq_corr_160x120": 0.99546,
+  "best_shift_px_160grid": [
+   0,
+   0
+  ],
+  "lowfreq_psnr_aligned_db": 31.43,
+  "mean_rgb_shift_vs_source": [
+   -3.62,
+   -2.92,
+   2.84
+  ]
+ }
+}

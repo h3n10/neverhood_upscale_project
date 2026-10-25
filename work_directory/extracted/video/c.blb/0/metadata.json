@@ -1,0 +1,85 @@
+{
+  "archive": "c.blb",
+  "entry_id": 0,
+  "hash": "04180007",
+  "type": 10,
+  "compression": 1,
+  "offset": 2012,
+  "size": 541428,
+  "expanded_size": 541428,
+  "dimensions": {
+    "width": 320,
+    "height": 240
+  },
+  "frames": 85,
+  "frame_rate_raw_signed": -6666,
+  "fps": 15.001500150015001,
+  "fps_rational": "50000/3333",
+  "format": "SMK2",
+  "sha256": "6e9413a1330d3ca5bef086bfe12bd311be5aaa2a660b0f539e82e72e06f5ef17",
+  "sampled_frames": [
+    {
+      "source_frame_index": 0,
+      "path": "work_directory\\extracted\\video\\c.blb\\0\\frames\\frame_000.png",
+      "dimensions": {
+        "width": 320,
+        "height": 240
+      },
+      "png_sha256": "a80e5a88f19e63b26048ddf8facf29335531341741070a983288d2b9cf250245",
+      "decoded_rgb_sha256": "17a24dd929f74ba4ddb9ff7e6718f43d680b3f70072c5e7ecd83f07e61b179d8"
+    },
+    {
+      "source_frame_index": 42,
+      "path": "work_directory\\extracted\\video\\c.blb\\0\\frames\\frame_001.png",
+      "dimensions": {
+        "width": 320,
+        "height": 240
+      },
+      "png_sha256": "cfb17a2be51ac042e165bdfbb5405af3786774e115dabfab1d2c089352ffdb39",
+      "decoded_rgb_sha256": "11bd7c112f51d71524e2953acdb48dac4758eeccfef79aaea94e395c64fedc10"
+    },
+    {
+      "source_frame_index": 84,
+      "path": "work_directory\\extracted\\video\\c.blb\\0\\frames\\frame_002.png",
+      "dimensions": {
+        "width": 320,
+        "height": 240
+      },
+      "png_sha256": "cfe476f10c2cfa3edb28ba37c9bf8c1e645f199ef7cb44c6c6803d12cdde9857",
+      "decoded_rgb_sha256": "5e415e0d3520d4028918b0535eeb2df861c632f295b10793e1cd3a773e7fab3a"
+    }
+  ],
+  "motion_validation": {
+    "method": "decoded RGB pixel hashes and pairwise pixel differences",
+    "all_three_decoded_frames_distinct": true,
+    "pairwise_differences": [
+      {
+        "frame_indices": [
+          0,
+          42
+        ],
+        "changed_pixels": 35744,
+        "total_pixels": 76800,
+        "mean_absolute_channel_difference_0_255": 12.543594
+      },
+      {
+        "frame_indices": [
+          0,
+          84
+        ],
+        "changed_pixels": 42334,
+        "total_pixels": 76800,
+        "mean_absolute_channel_difference_0_255": 13.643368
+      },
+      {
+        "frame_indices": [
+          42,
+          84
+        ],
+        "changed_pixels": 23260,
+        "total_pixels": 76800,
+        "mean_absolute_channel_difference_0_255": 9.935712
+      }
+    ]
+  }
+}
